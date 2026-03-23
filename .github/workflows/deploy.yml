@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,11 +17,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ESTE PASO ES EL QUE ARREGLA TU ERROR
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22 # Forzamos la versión que Astro pide
-
-      - name: Install, build, and upload with Astro
+      - name: Build & Upload
         uses: withastro/action@v3
+        with:
+          node-version: 22   # ← especifica la versión aquí, evita sorpresas
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

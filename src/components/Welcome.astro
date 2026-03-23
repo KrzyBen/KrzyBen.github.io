@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
 ---
@@ -9,7 +8,7 @@ import background from '../assets/background.svg';
 	<main>
 		<section id="hero">
 			<a href="https://astro.build"
-				<Image src={astroLogo} width="115" height="48" alt="Astro Homepage" />
+				<img src={import.meta.env.BASE_URL + astroLogo.src.replace(/^\//, '')} width="115" height="48" alt="Astro Homepage" />
 			>
 			<h1>
 				To get started, open the <code><pre>src/pages</pre></code> directory in your project.

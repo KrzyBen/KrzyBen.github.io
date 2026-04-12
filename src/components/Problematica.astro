@@ -6,26 +6,47 @@ const stats = [
 ];
 ---
 
-<section id="problema" class="py-20 bg-gray-900">
-  <div class="max-w-5xl mx-auto px-6">
-    
-    <!-- Texto arriba -->
+<section id="problema" class="section dark">
+  <div class="container">
     <div class="max-w-2xl">
-      <h2 class="text-4xl font-bold mb-4">Problemática</h2>
-      <p class="text-xl text-gray-400">
-        La seguridad vial en Chile sigue siendo un grave problema de salud pública y una carga económica significativa para el país.
-      </p>
+      <h2>Problemática</h2>
+      <p class="intro">La seguridad vial en Chile sigue siendo un grave problema de salud pública y una carga económica significativa para el país.</p>
     </div>
 
-    <!-- Cifras abajo -->
-    <div class="grid md:grid-cols-3 gap-6 mt-16">
+    <div class="stats-grid">
       {stats.map(stat => (
-        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 text-center hover:border-blue-400 transition">
-          <p class="text-6xl font-bold text-blue-400">{stat.value}</p>
-          <p class="text-gray-400 mt-4 text-lg">{stat.label}</p>
+        <div class="stat-card">
+          <p class="value">{stat.value}</p>
+          <p class="label">{stat.label}</p>
         </div>
       ))}
     </div>
-
   </div>
 </section>
+
+<style>
+  .section.dark { padding: 5rem 0; background: #111827; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  h2 { font-size: 2.75rem; font-weight: 700; margin-bottom: 1rem; }
+  .intro { font-size: 1.25rem; color: #94a3b8; max-width: 600px; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+  .value {
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin: 0;
+  }
+  .label { margin-top: 1rem; color: #cbd5e1; font-size: 1.15rem; }
+</style>

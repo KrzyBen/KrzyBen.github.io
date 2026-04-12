@@ -1,0 +1,31 @@
+---
+const stats = [
+  { label: "Siniestros ene-mar 2025", value: "17.674" },
+  { label: "Fallecidos", value: "410 (+3,3%)" },
+  { label: "Imprudencia del conductor", value: "69,1%" },
+];
+---
+
+<section id="problema" class="py-20 bg-gray-900">
+  <div class="max-w-5xl mx-auto px-6">
+    
+    <!-- Texto arriba -->
+    <div class="max-w-2xl">
+      <h2 class="text-4xl font-bold mb-4">Problemática</h2>
+      <p class="text-xl text-gray-400">
+        La seguridad vial en Chile sigue siendo un grave problema de salud pública y una carga económica significativa para el país.
+      </p>
+    </div>
+
+    <!-- Cifras abajo -->
+    <div class="grid md:grid-cols-3 gap-6 mt-16">
+      {stats.map(stat => (
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 text-center hover:border-blue-400 transition">
+          <p class="text-6xl font-bold text-blue-400">{stat.value}</p>
+          <p class="text-gray-400 mt-4 text-lg">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

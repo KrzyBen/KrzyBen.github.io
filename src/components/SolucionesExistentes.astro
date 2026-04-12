@@ -1,0 +1,48 @@
+---
+const apps = [
+  { 
+    name: "Nexar Connect", 
+    price: "$9.99 USD/mes", 
+    desc: "Detección de incidentes y almacenamiento en la nube", 
+    url: "https://apps.apple.com/us/app/nexar-classic/id996931497" 
+  },
+  { 
+    name: "Driver: Driving & Dash Cam", 
+    price: "$8–13 USD", 
+    desc: "IA para frenazos y colisiones (solo EE.UU.)", 
+    url: "https://apps.apple.com/us/app/driver-driving-dash-cam-app/id1415557883" 
+  },
+  { 
+    name: "DashcamUA", 
+    price: "Gratis (con publicidad)", 
+    desc: "Reconocimiento de patentes y reportes anónimos", 
+    url: "https://apps.apple.com/ua/app/dashcamua/id1542510318" 
+  },
+];
+---
+
+<section id="soluciones" class="py-20">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-12">Soluciones existentes</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {apps.map(app => (
+        <a 
+          href={app.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-blue-400 hover:bg-white/10 transition group"
+        >
+          <h3 class="font-semibold text-2xl group-hover:text-blue-400 transition">{app.name}</h3>
+          <p class="text-blue-400 text-sm mt-1">{app.price}</p>
+          <p class="mt-6 text-gray-400">{app.desc}</p>
+          
+          <!-- Indicador de enlace -->
+          <div class="mt-8 text-xs text-blue-400 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition">
+            Ver en App Store →
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

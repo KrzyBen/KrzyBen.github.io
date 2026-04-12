@@ -1,0 +1,53 @@
+---
+const categorias = [
+  {
+    label: 'App Móvil',
+    items: [
+      { name: 'Kotlin', role: 'Lenguaje principal', color: '#ede9fe', icon: '🟣' },
+      { name: 'CameraX', role: 'Grabación dashcam', color: '#e0f2fe', icon: '📷' },
+    ]
+  },
+  {
+    label: 'Servidor',
+    items: [
+      { name: 'Node.js', role: 'Backend', color: '#e0f2fe', icon: '🟦' },
+      { name: 'Express', role: 'API', color: '#ede9fe', icon: '⚡' },
+      { name: 'PostgreSQL', role: 'Base de datos', color: '#e8f5e9', icon: '🐘' },
+    ]
+  },
+  {
+    label: 'Inteligencia Artificial',
+    items: [
+      { name: 'YOLOv8', role: 'Detección en tiempo real', color: '#fff3e0', icon: '👁️' },
+      { name: 'EasyOCR', role: 'Lectura de patentes', color: '#fce7f3', icon: '🔤' },
+      { name: 'Ollama', role: 'Generación de reportes', color: '#e8eaf6', icon: '🤖' },
+    ]
+  },
+];
+---
+
+<section id="tecnologias" class="py-20 bg-gray-900">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-12">Stack Tecnológico</h2>
+    <div class="grid md:grid-cols-3 gap-12">
+      {categorias.map(cat => (
+        <div>
+          <span class="uppercase text-xs tracking-widest font-semibold text-blue-400">{cat.label}</span>
+          <div class="mt-6 grid gap-4">
+            {cat.items.map(item => (
+              <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-6 flex gap-5 items-start">
+                <div class="w-10 h-10 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0" style={`background: ${item.color}`}>
+                  {item.icon}
+                </div>
+                <div>
+                  <p class="font-semibold">{item.name}</p>
+                  <p class="text-sm text-gray-400">{item.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

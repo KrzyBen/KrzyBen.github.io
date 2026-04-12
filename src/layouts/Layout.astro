@@ -1,23 +1,18 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/KrzyBen.github.io/favicon.svg" />
-		<link rel="icon" href="/KrzyBen.github.io/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Proyecto de Taller de Desarrollo</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
+const { title = "SRAACV - Proyecto de Titulación" } = Astro.props;
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sistema móvil para el registro y análisis automatizado de conductas vehiculares imprudentes mediante inteligencia artificial - Proyecto de Titulación UBB 2026" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-950 text-white">
+    <slot />
+  </body>
+</html>

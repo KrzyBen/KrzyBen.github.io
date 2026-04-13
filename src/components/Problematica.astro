@@ -10,6 +10,7 @@ const stats = [
   <div class="container">
     <div class="max-w-3xl">
       <h2>Problemática</h2>
+
       <p class="intro">
         La seguridad vial en Chile representa un grave problema de salud pública y una importante carga económica para el país. 
         Solo entre enero y marzo de 2025 se registraron 17.674 siniestros viales y 410 personas fallecidas.
@@ -22,6 +23,7 @@ const stats = [
       </p>
 
       <h3 class="mt-10 mb-4 text-xl">¿Cómo se controla actualmente?</h3>
+
       <p class="intro">
         Los controles se realizan de forma reactiva mediante Carabineros, fiscalizadores del MTT y cámaras fijas (CATI). 
         Estos métodos tienen <strong>baja cobertura territorial</strong>, dependen de la presencia humana y no permiten detectar 
@@ -32,6 +34,12 @@ const stats = [
         El problema principal es la <strong>falta de herramientas preventivas, accesibles y automatizadas</strong> que permitan 
         registrar el entorno de conducción, detectar riesgos en el momento y generar evidencia objetiva.
       </p>
+    </div>
+
+    <!-- IMÁGENES -->
+    <div class="problema-media">
+      <img src={`${import.meta.env.BASE_URL}images/choque-ilustracion.jpg`} alt="Ilustración accidente" />
+      <img src={`${import.meta.env.BASE_URL}images/choque-real.jpg`} alt="Accidente real" />
     </div>
 
     <!-- Tarjetas de estadísticas -->
@@ -47,34 +55,84 @@ const stats = [
 </section>
 
 <style>
-  .section.dark { padding: 5rem 0; background: #111827; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-  h2 { font-size: 2.75rem; font-weight: 700; margin-bottom: 1rem; }
-  .intro { font-size: 1.25rem; line-height: 1.6; color: #cbd5e1; }
-  h3 { color: #93c5fd; font-weight: 600; }
-  
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 4rem;
-  }
-  .stat-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-  }
-  .value {
-    font-size: 3.8rem;
-    font-weight: 700;
-    color: #60a5fa;
-    margin: 0;
-  }
-  .label { 
-    margin-top: 1rem; 
-    color: #cbd5e1; 
-    font-size: 1.15rem; 
-  }
+.section.dark {
+  padding: 5rem 0;
+  background: transparent;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 65ch;
+}
+
+h3 {
+  color: var(--primary-soft);
+  font-weight: 600;
+}
+
+/* IMÁGENES */
+.problema-media {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.problema-media img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 16px;
+  filter: brightness(0.85);
+  transition: all 0.3s ease;
+}
+
+.problema-media img:hover {
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.value {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: var(--primary-soft);
+  margin: 0;
+}
+
+.label {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+}
 </style>

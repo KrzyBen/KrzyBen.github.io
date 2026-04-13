@@ -1,46 +1,23 @@
-# Astro Starter Kit: Basics
+# SRAACV
 
-```sh
-npm create astro@latest -- --template basics
-```
+**Sistema móvil para el registro y análisis automatizado de conductas vehiculares imprudentes mediante inteligencia artificial**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Proyecto de Titulación - Ingeniería en Ejecución en Computación e Informática  
+**Benjamín Antonio Manríquez Ramírez**  
+Universidad del Bío-Bío • 2026
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+### 🌐 **Página del Proyecto**
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+**[Ver sitio web en vivo →](https://krzyben.github.io/)**
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+### 📋 Sobre el proyecto
 
-All commands are run from the root of the project, from a terminal:
+SRAACV es un sistema híbrido (aplicación móvil + servidor) que utiliza inteligencia artificial para detectar en tiempo real conductas imprudentes al volante y generar reportes automáticos con posible valor legal según la normativa chilena.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Su objetivo es contribuir a la prevención de accidentes de tránsito en Chile, ofreciendo una herramienta accesible, gratuita y enfocada en el contexto nacional.
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---

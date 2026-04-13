@@ -8,11 +8,33 @@ const stats = [
 
 <section id="problema" class="section dark">
   <div class="container">
-    <div class="max-w-2xl">
+    <div class="max-w-3xl">
       <h2>Problemática</h2>
-      <p class="intro">La seguridad vial en Chile sigue siendo un grave problema de salud pública y una carga económica significativa para el país.</p>
+      <p class="intro">
+        La seguridad vial en Chile representa un grave problema de salud pública y una importante carga económica para el país. 
+        Solo entre enero y marzo de 2025 se registraron 17.674 siniestros viales y 410 personas fallecidas.
+      </p>
+      
+      <p class="intro mt-6">
+        Durante el 2024 se contabilizaron 75.653 siniestros a nivel nacional, con 1.439 fallecidos y más de 42.400 lesionados. 
+        Los vehículos livianos (automóviles y camionetas) son los más involucrados, y la <strong>imprudencia del conductor</strong> 
+        es la causa principal, representando el 69,1 % de los casos.
+      </p>
+
+      <h3 class="mt-10 mb-4 text-xl">¿Cómo se controla actualmente?</h3>
+      <p class="intro">
+        Los controles se realizan de forma reactiva mediante Carabineros, fiscalizadores del MTT y cámaras fijas (CATI). 
+        Estos métodos tienen <strong>baja cobertura territorial</strong>, dependen de la presencia humana y no permiten detectar 
+        ni prevenir conductas imprudentes en tiempo real.
+      </p>
+
+      <p class="intro mt-6">
+        El problema principal es la <strong>falta de herramientas preventivas, accesibles y automatizadas</strong> que permitan 
+        registrar el entorno de conducción, detectar riesgos en el momento y generar evidencia objetiva.
+      </p>
     </div>
 
+    <!-- Tarjetas de estadísticas -->
     <div class="stats-grid">
       {stats.map(stat => (
         <div class="stat-card">
@@ -28,12 +50,14 @@ const stats = [
   .section.dark { padding: 5rem 0; background: #111827; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
   h2 { font-size: 2.75rem; font-weight: 700; margin-bottom: 1rem; }
-  .intro { font-size: 1.25rem; color: #94a3b8; max-width: 600px; }
+  .intro { font-size: 1.25rem; line-height: 1.6; color: #cbd5e1; }
+  h3 { color: #93c5fd; font-weight: 600; }
+  
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-top: 3.5rem;
+    margin-top: 4rem;
   }
   .stat-card {
     background: rgba(255,255,255,0.06);
@@ -48,5 +72,9 @@ const stats = [
     color: #60a5fa;
     margin: 0;
   }
-  .label { margin-top: 1rem; color: #cbd5e1; font-size: 1.15rem; }
+  .label { 
+    margin-top: 1rem; 
+    color: #cbd5e1; 
+    font-size: 1.15rem; 
+  }
 </style>

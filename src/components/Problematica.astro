@@ -8,41 +8,40 @@ const stats = [
 
 <section id="problema" class="section dark">
   <div class="container">
-    <div class="max-w-3xl">
-      <h2>Problemática</h2>
 
-      <p class="intro">
-        La seguridad vial en Chile representa un grave problema de salud pública y una importante carga económica para el país. 
-        Solo entre enero y marzo de 2025 se registraron 17.674 siniestros viales y 410 personas fallecidas.
-      </p>
-      
-      <p class="intro mt-6">
-        Durante el 2024 se contabilizaron 75.653 siniestros a nivel nacional, con 1.439 fallecidos y más de 42.400 lesionados. 
-        Los vehículos livianos (automóviles y camionetas) son los más involucrados, y la <strong>imprudencia del conductor</strong> 
-        es la causa principal, representando el 69,1 % de los casos.
-      </p>
+    <h2 class="title-center">Problemática</h2>
 
-      <h3 class="mt-10 mb-4 text-xl">¿Cómo se controla actualmente?</h3>
+    <div class="problema-grid">
 
-      <p class="intro">
-        Los controles se realizan de forma reactiva mediante Carabineros, fiscalizadores del MTT y cámaras fijas (CATI). 
-        Estos métodos tienen <strong>baja cobertura territorial</strong>, dependen de la presencia humana y no permiten detectar 
-        ni prevenir conductas imprudentes en tiempo real.
-      </p>
+      <!-- TEXTO -->
+      <div class="problema-text">
+        <p>
+          La seguridad vial en Chile es un problema crítico. 
+          En el primer trimestre de 2025 hubo <strong>17.674 siniestros</strong> 
+          y <strong>410 fallecidos</strong>.
+        </p>
 
-      <p class="intro mt-6">
-        El problema principal es la <strong>falta de herramientas preventivas, accesibles y automatizadas</strong> que permitan 
-        registrar el entorno de conducción, detectar riesgos en el momento y generar evidencia objetiva.
-      </p>
+        <p>
+          En 2024, se registraron más de <strong>75.000 siniestros</strong> y 
+          <strong>1.439 muertes</strong>, siendo la <strong>imprudencia del conductor</strong> 
+          la principal causa.
+        </p>
+
+        <p>
+          Actualmente, los controles son reactivos y limitados, lo que impide 
+          prevenir riesgos en tiempo real.
+        </p>
+      </div>
+
+      <!-- IMÁGENES -->
+      <div class="problema-media">
+        <img src="/images/choque-ilustracion.jpg" alt="Ilustración accidente" loading="lazy" />
+        <img src="/images/choque-real.jpg" alt="Accidente real" loading="lazy" />
+      </div>
+
     </div>
 
-    <!-- IMÁGENES -->
-    <div class="problema-media">
-      <img src="images/choque-ilustracion.jpg" alt="Ilustración accidente" />
-      <img src="/images/choque-real.jpg" alt="Accidente real" />
-    </div>
-
-    <!-- Tarjetas de estadísticas -->
+    <!-- STATS -->
     <div class="stats-grid">
       {stats.map(stat => (
         <div class="stat-card">
@@ -51,6 +50,7 @@ const stats = [
         </div>
       ))}
     </div>
+
   </div>
 </section>
 
@@ -66,39 +66,46 @@ const stats = [
   padding: 0 1.5rem;
 }
 
-h2 {
+/* TÍTULO */
+.title-center {
+  text-align: center;
   font-size: 2.75rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
-.intro {
-  font-size: 1.25rem;
-  line-height: 1.6;
+/* GRID PRINCIPAL */
+.problema-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* TEXTO */
+.problema-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
   color: var(--text-secondary);
-  max-width: 65ch;
 }
 
-h3 {
-  color: var(--primary-soft);
-  font-weight: 600;
+.problema-text p {
+  margin-bottom: 1.5rem;
 }
 
 /* IMÁGENES */
 .problema-media {
-  margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
 .problema-media img {
   width: 100%;
-  height: 230px;
+  height: 220px;
   object-fit: cover;
   border-radius: 16px;
   filter: brightness(0.85);
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .problema-media img:hover {
@@ -124,7 +131,7 @@ h3 {
 }
 
 .value {
-  font-size: 3.8rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: var(--primary-soft);
   margin: 0;
@@ -133,6 +140,17 @@ h3 {
 .label {
   margin-top: 1rem;
   color: var(--text-secondary);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .problema-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title-center {
+    text-align: left;
+  }
 }
 </style>
